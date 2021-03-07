@@ -1,4 +1,4 @@
-# gatospic
+# Kpics
 
 > A Vue.js project
 
