@@ -17,20 +17,16 @@ export default {
   data(){
 
     return{
-      titulo: 'GatoPic',
-      fotos: [
-        {
-          id: 1,                                                                                                               
-          url: 'https://www.proteste.org.br/-/media/proteste/images/home/alimentacao/seguranca-alimentar/gato-nao-come.jpg?rev=b16a475f-961e-45ab-8f5d-12550b00b87c',
-          titulo: 'gato'
-        },
-        {
-          id: 2,
-          url: 'https://www.petz.com.br/blog/wp-content/uploads/2019/07/vida-de-gato.jpg',
-          titulo: 'gatin'
-        }
-      ]
+      titulo: 'Kpic',
+      fotos: []
     }
+  },
+
+  created() {
+    let promise = this.$http.get('http://localhost:3000/v1/fotos');
+    promise
+    .then(res => res.json())
+    .then(fotos => this.fotos = fotos, err => console.log(err))
   }
 }
 </script>
