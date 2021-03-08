@@ -1,8 +1,10 @@
 <template>
 <div class="corpo">
 <h1 class="centralizado">{{titulo}}</h1>
+
+<input type="seach" class="filtro" @input= "filtro = $event.target.value" placeholder="Filtre pelo nome">
 <ul class="lista-fotos">
-  <li class="lista-fotos-item" v-for= "foto of fotos" :key= "foto.id">
+  <li class="lista-fotos-item" v-for= "foto of fotosComFiltro" :key= "foto.id">
 
     <meu-painel :titulo= "foto.titulo">
       <img class="imagem-responsiva" :src= "foto.url" :alt = "foto.titulo">
@@ -29,8 +31,22 @@ export default {
 
     return{
       titulo: 'Kpic',
-      fotos: []
+      fotos: [],
+      filtro: ''
     }
+  },
+
+  computed: {
+
+    fotosComFiltro(){
+      if(this.filtro){
+        let exp = new RegExp(this.filtro.trim(), 'i');
+        return this.fotos.filter(foto => exp.test(foto.titulo));
+      }else{
+        return this.fotos;
+      }
+    }
+
   },
 
   created() {
@@ -62,6 +78,11 @@ export default {
   }
 
   .imagem-responsiva {
+    width: 100%;
+  }
+
+  .filtro {
+    display: block;
     width: 100%;
   }
 
