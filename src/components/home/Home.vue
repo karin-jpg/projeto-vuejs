@@ -1,26 +1,23 @@
 <template>
-<div class="corpo">
-<h1 class="centralizado">{{titulo}}</h1>
+<div>
+    <h1 class="centralizado">{{titulo}}</h1>
 
-<input type="seach" class="filtro" @input= "filtro = $event.target.value" placeholder="Filtre pelo nome">
-<ul class="lista-fotos">
-  <li class="lista-fotos-item" v-for= "foto of fotosComFiltro" :key= "foto.id">
+    <input type="seach" class="filtro" @input= "filtro = $event.target.value" placeholder="Filtre pelo nome">
+    <ul class="lista-fotos">
+    <li class="lista-fotos-item" v-for= "foto of fotosComFiltro" :key= "foto.id">
 
-    <meu-painel :titulo= "foto.titulo">
-      <imagem-responsiva :url = "foto.url" :titulo = "foto.titulo"></imagem-responsiva>
-    </meu-painel>
+        <meu-painel :titulo= "foto.titulo">
+        <imagem-responsiva :url = "foto.url" :titulo = "foto.titulo"></imagem-responsiva>
+        </meu-painel>
     
-    </li>
-</ul>
-
-
-
+        </li>
+    </ul>
 </div>
 </template>
 
 <script>
-import Painel from './components/shared/painel/Painel.vue';
-import ImagemResponsiva from './components/shared/imagem-responsiva/ImagemResponsiva.vue';
+import Painel from '../shared/painel/Painel.vue';
+import ImagemResponsiva from '../shared/imagem-responsiva/ImagemResponsiva.vue';
 export default {
 
   components: {
@@ -60,11 +57,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .corpo {
-    font-family:Helvetica, sans-serif;
-    width: 96%;
-    margin: 0 auto;
-  }
+  
 
   .centralizado {
     text-align: center;
