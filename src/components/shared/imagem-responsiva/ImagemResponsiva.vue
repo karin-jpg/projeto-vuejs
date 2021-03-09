@@ -4,7 +4,17 @@
 
 <script>
 export default {
-    props: ['url', 'titulo']
+    //props: ['url', 'titulo']
+    props: {
+      url: {
+        type: Array,
+        required: true
+      },
+      titulo: {
+        type: Array,
+        required: true
+      }
+    }
 }
 </script>
 
