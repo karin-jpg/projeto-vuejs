@@ -7,21 +7,16 @@ export default{
 
     props: {
         tipo: {
-            type: Array,
+            type: String,
             required: true
         },
         rotulo: {
-            type: Array,
+            type: String,
             required: true
         },
-        confirmacao: {
-            type: Boolean,
-            required: false
-        },
-        estilo: {
-            type: String,
-            required: false
-        }
+        confirmacao: Boolean,
+        
+        estilo: String
     },
     methods: {
         disparaAcao(){

@@ -15,7 +15,7 @@
 export default {
     props: {
       titulo: {
-        type: Array,
+        type: String,
         required: true
       }
     },
