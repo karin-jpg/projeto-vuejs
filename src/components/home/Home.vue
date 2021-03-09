@@ -8,7 +8,7 @@
 
         <meu-painel :titulo= "foto.titulo">
           <imagem-responsiva :url = "foto.url" :titulo = "foto.titulo"></imagem-responsiva>
-          <meu-botao tipo="button" rotulo="remover" @botaoAtivado= "remove($event, foto)"></meu-botao>
+          <meu-botao tipo="button" rotulo="remover" @botaoAtivado= "remove($event, foto)" :confirmacao= "true" estilo="perigo"></meu-botao>
         </meu-painel>
     
         </li>
