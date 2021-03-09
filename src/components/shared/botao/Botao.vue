@@ -1,5 +1,5 @@
 <template>
-    <button class= "botao botao-perigo" :type = "tipo">{{ rotulo }}</button>
+    <button @click= "disparaAcao()" class= "botao botao-perigo" :type = "tipo">{{ rotulo }}</button>
 </template>
 
 <script>
@@ -13,6 +13,13 @@ export default{
         rotulo: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        disparaAcao(){
+            if(confirm("Confirma operação?")){
+                this.$emit('botaoAtivado');
+            }
         }
     }
 
